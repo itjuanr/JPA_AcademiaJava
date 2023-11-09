@@ -27,10 +27,4 @@ public class ClientePedidoDAO {
 		}
 	}
 
-	public Pedido criarNovoPedido(double valorTotal, Cliente cliente) {
-		Pedido pedido = new Pedido();
-		pedido.setValorTotal(valorTotal);
-		pedido.setCliente(cliente);
-		return pedido;
-	}
 }
