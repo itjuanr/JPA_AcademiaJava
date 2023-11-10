@@ -28,6 +28,7 @@ public class Main {
             cliente.addPedido(pedido2);
             cliente.addPedido(pedido3);
 
+            
             em.persist(cliente);
 
             em.getTransaction().commit();
@@ -43,6 +44,9 @@ public class Main {
             
             //Atualiza o status do pedido
             dao.atualizarStatusPedido(pedido2.getId(), "Concluído");
+
+            //Remover pedido associado ao cliente de id 1 e id 3 de pedido.
+            dao.deletarPedidoDeCliente(cliente.getId(), pedido3.getId());
             
             // Atualiza o nome do cliente
             dao.atualizarCliente(clienteRecuperado.getId(), "João");
